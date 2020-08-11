@@ -44,13 +44,24 @@ function displayMessages(){
 		displayMessage += `
 		<li oncontextmenu="this.remove()">
 		<input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-		<label contentEditable = "true" for='item_${i}'>${item.todo}</label>
+		<label contentEditable = "true">${item.todo}</label>
 		</li>
 		`;
 		todo.innerHTML = displayMessage;
-		localStorage.setItem('todo', JSON.stringify(todoList));
 	});
 }
+
+
+const checkLength = function(evt) {
+  if (DealField.value.length > 0) {
+  	button.removeAttribute('disabled')
+  }
+}
+
+const DealField = document.querySelector('input[name="deal"]');
+const button = document.querySelector('button');
+DealField.addEventListener('keyup', checkLength);
+
 
 todo.addEventListener('change', function(event){
 	let idInput = event.target.getAttribute('id');
