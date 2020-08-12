@@ -77,6 +77,10 @@ body {
 	border: 1px solid white;
 }
 
+.btnAd:disabled{
+	background: #ccc2c2;
+}
+
 .btnDe{
 	padding: 15px;
 	width: 10%;
