@@ -42,9 +42,9 @@ function displayMessages(){
 	let displayMessage = '';
 	todoList.forEach(function(item, i) {
 		displayMessage += `
-		<li oncontextmenu="this.remove()">
+		<li oncontextmenu="this.remove()" contentEditable = "true">
 		<input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-		<label contentEditable = "true">${item.todo}</label>
+		<label name="deall">${item.todo}</label>
 		</li>
 		`;
 		todo.innerHTML = displayMessage;
